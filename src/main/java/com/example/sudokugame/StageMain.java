@@ -10,7 +10,7 @@ public class StageMain {
 
     public static void setStage(Stage stage){StageMain.stage = stage;}
 
-    public static Stage getInstance(){
+    public static Stage getScene(){
         if(stage == null){
             stage = new Stage();
         }
