@@ -8,10 +8,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sudokugame.controller.FinalController">
    <children>
-      <Label text="Mensaje final" textFill="#1a00ff">
+      <Label fx:id="lbFinalMessage" text="Mensaje final" textFill="#1a00ff">
          <font>
             <Font name="Rockwell Bold" size="25.0" />
          </font>
@@ -26,7 +25,7 @@
       </ImageView>
       <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" text="Salir del juego">
+            <Button fx:id="btExitGame" mnemonicParsing="false" onAction="#onActionExitGame" text="Salir del juego">
                <HBox.margin>
                   <Insets left="50.0" right="100.0" />
                </HBox.margin>
@@ -34,7 +33,7 @@
                   <Font name="Tahoma Bold" size="14.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" text="volver a jugar">
+            <Button fx:id="btReplay" mnemonicParsing="false" onAction="#onActionReplay" text="volver a jugar">
                <HBox.margin>
                   <Insets left="100.0" right="50.0" />
                </HBox.margin>

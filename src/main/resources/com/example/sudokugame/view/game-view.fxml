@@ -10,73 +10,72 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sudokugame.controller.GameController">
+    <children>
+        <Label text="¡BUENA SUERTE!" textFill="#3300ff">
+            <VBox.margin>
+                <Insets top="40.0" />
+            </VBox.margin>
+            <font>
+                <Font name="Rockwell Bold" size="23.0" />
+            </font>
+        </Label>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label text="¡BUENA SUERTE!" textFill="#3300ff">
-         <VBox.margin>
-            <Insets top="50.0" />
-         </VBox.margin>
-         <font>
-            <Font name="Rockwell Bold" size="23.0" />
-         </font>
-      </Label>
-      <GridPane prefWidth="856.0">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <VBox.margin>
-            <Insets top="50.0" />
-         </VBox.margin>
-      </GridPane>
-      <Label text="Error X motivo">
-         <font>
-            <Font name="Tahoma Bold" size="14.0" />
-         </font>
-         <VBox.margin>
-            <Insets top="30.0" />
-         </VBox.margin>
-      </Label>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Button mnemonicParsing="false" text="Ayuda(cantidad)">
-               <font>
-                  <Font name="Tahoma Bold" size="15.0" />
-               </font>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" text="Abandonar partida">
-               <font>
-                  <Font name="Tahoma Bold" size="15.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="150.0" right="150.0" />
-               </HBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" text="Reglas del juego">
-               <font>
-                  <Font name="Tahoma Bold" size="15.0" />
-               </font>
-            </Button>
-         </children>
-         <VBox.margin>
-            <Insets top="100.0" />
-         </VBox.margin>
-      </HBox>
-   </children>
+        <GridPane fx:id="sudokuGrid" maxWidth="360.0" maxHeight="360.0" prefHeight="360.0" prefWidth="360.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="60.0" prefWidth="60.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="60.0" prefWidth="60.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="60.0" prefWidth="60.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="60.0" prefWidth="60.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="60.0" prefWidth="60.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="60.0" prefWidth="60.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <VBox.margin>
+                <Insets top="30.0" />
+            </VBox.margin>
+        </GridPane>
+
+        <Label fx:id="lbErrorMessage" text="..." textFill="#cc0000">
+            <font>
+                <Font name="Tahoma Bold" size="14.0" />
+            </font>
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </Label>
+
+        <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0">
+            <children>
+                <Button fx:id="btHelp" mnemonicParsing="false" onAction="#onActionHelp" text="Ayuda">
+                    <font>
+                        <Font name="Tahoma Bold" size="15.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btAbandonGame" mnemonicParsing="false" onAction="#onActionAbandonGame" text="Abandonar partida">
+                    <font>
+                        <Font name="Tahoma Bold" size="15.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="100.0" right="100.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="btRulesGame" mnemonicParsing="false" onAction="#onActionRulesGame" text="Reglas del juego">
+                    <font>
+                        <Font name="Tahoma Bold" size="15.0" />
+                    </font>
+                </Button>
+            </children>
+            <VBox.margin>
+                <Insets top="30.0" />
+            </VBox.margin>
+        </HBox>
+    </children>
 </VBox>
